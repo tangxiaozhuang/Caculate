@@ -1,0 +1,131 @@
+@charset "utf-8";
+.page_frame {
+	padding: 0px;
+	height: auto;
+	width: 1124px;
+	margin-top: 0px;
+	margin-right: auto;
+	margin-bottom: 0px;
+	margin-left: auto;
+}
+.top_frame {
+	padding: 0px;
+	height: 120px;
+	width: auto;
+	margin-top: 5px;
+	margin-right: 0px;
+	margin-bottom: 10px;
+	margin-left: 0px;
+	background-color: #FFC;
+}
+.menu_frame {
+	padding: 0px;
+	height: 38px;
+	width: auto;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 10px;
+	margin-left: 0px;
+	background-color: #eee;
+
+}
+
+.menu_frame2 {
+	height: 50px;
+	width: auto;
+	margin: 0px;
+	padding-top: 8px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 15px;
+	font-weight: bold;
+	color: #000;
+}
+
+.content_frame {
+	padding: 0px;
+	height: 500px;
+	width: auto;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 10px;
+	margin-left: 0px;
+	background-color: #FFFFFF;
+}
+
+
+.left_mag {
+	height: auto;
+	width: auto;
+	border: 1px solid #FFCC00;
+	background-color: #cccccc;
+	margin: 0px;
+	padding-top: 30px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 10px;
+}
+
+
+
+.content_left {
+	padding: 0px;
+	height: 500px;
+	width: 500px;
+	margin-top: 0px;
+	margin-right: 10px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	float: left;
+}
+.bottom_frame {
+	background-color: #FFFFFF;
+	margin: 0px;
+	padding: 0px;
+	height: auto;
+	width: auto;
+
+}
+
+.content_right {
+	margin: 0px;
+	padding: 0px;
+	float: right;
+	height: auto;
+	width: 600px;
+	background-color: #D7D7D7;
+}
+.table_sty {
+	float: left;
+	margin-top: 50px;
+	margin-left: 50px;
+	background-color: #eee;
+	border: medium solid #FFF;
+}
+.table_sty2 {
+	background-color: #FFF;
+	width: 200px;
+	height: 35px;
+}
+.table_sty1 {
+	width: 100px;
+	height: 35px;
+	border: 1px;
+	text-align: center;
+}
+.form_sty {
+	width: 80px;
+	padding-top: 15px;
+}
+.sel_opt {
+	background-color: #FFF;
+	width: 200px;
+	height: 30px;
+	border: 2px inset #999;
+}
+.text_sty {
+	background-color: #FFF;
+	width: 200px;
+	height: 25px;
+	border: 2px inset #999;
+}

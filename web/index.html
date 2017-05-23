@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>网贷计算器</title>
+  <link rel="stylesheet" href="./css/bootstrap.css">
+  <script type="text/javascript" src="js/jquery-1.8.3.js"></script>
+  <script type="text/javascript" src="js/My97DatePicker/WdatePicker.js"></script>
+  <script type="text/javascript" src="js/as.js">  </script>
+</head>
+
+<body onload="time()">
+<p></p>
+<!-- frame -->
+<div class="row">
+  <!-- frame-left -->
+  <div class="col-xs-1">&nbsp;</div>
+  <!-- frame-container -->
+  <div class="container-fluid col-xs-10">
+  
+<!-- header -->
+<div class="row">
+  <header class="page-header">
+    <h1>&nbsp;&nbsp;网贷计算器</h1>
+  </header>
+</div>
+
+<!-- main -->
+<div class="row">
+  <!-- main-top -->
+  <p></p>
+  <!-- main-left -->
+  <div class="form-horizontal col-sm-3 col-md-5">
+  <form id="frm" name="frm">
+    <div class="form-group">
+      <label for="dateBg" class="col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-9 col-md-4 control-label">借 出 日 期 ：</label>
+      <div class="col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-11 col-md-6">
+          <input name="dateBg" id="dateBg" class="form-control" type="text" onClick="WdatePicker()"/>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="loanamount" class="col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-9 col-md-4 control-label">借 出 金 额 ：</label>
+      <div class="col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-11 col-md-6">
+          <input name="LMoney" id="loanamount" class="form-control"  type="number" min=0 max=999999999999  onkeyup="operate()"/>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="loanterm" class="col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-9 col-md-4 control-label">借 出 期 限 ：</label>
+      <div class="col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-11 col-md-6">
+        <input type="number" class="form-control" name="LDate" id="loanterm" min="0" max="99999" required onKeyUp="operate()">&nbsp;&nbsp;
+        <label class="radio-inline">
+        <input class="" type="radio" name="DateType" id="month" value=30 required checked="checked" onClick="a1()">个月</label>
+        <label class="radio-inline">
+        <input type="radio" name="DateType" id="day" value=1 onClick="a2()">天</label>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="loanrate" class="col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-9 col-md-4 control-label">借 出 利 率 ：</label>
+      <div class="col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-11 col-md-6">
+        <input type="number" class="form-control" id="loanrate" name="LRate" min="0" max="999" required onKeyUp="operate()">&nbsp;&nbsp;
+        <label class="radio-inline">
+        <input class="" type="radio" name="RateType" id="rate_year" value=360 required checked="checked">年利率</label>
+        <label class="radio-inline">
+        <input type="radio" name="RateType" id="rate_day" value=1>日利率</label>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="repayType" class="col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-9 col-md-4 control-label">还 款 方 式 ：</label>
+      <div class="col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-11 col-md-6">
+        <select class="form-control" id="repayType" name="repayType" required>
+          <option value=0 selected = "selected">月还息到期还本</option>
+          <option value=1>到期还本息</option>
+          <option value=2>按日算息，每月付息，到期还本</option>
+          <option value=3>按月还本息（等额本息）</option>
+          <option value=4>月还息按季还本</option>
+          <option value=5>标满付息，到期还本</option>
+          <option value=6>等本等息</option>
+          <option value=7>等额本金</option>
+          <option value=8>按季还息，到期还本</option>
+         </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <input type="button" class="btn btn-default btn-md col-xs-offset-2 col-md-offset-3" id="btn" type="button" value=" 提 交 " onClick="operate()">
+      <div class="col-xs-2 col-sm-8 col-md-2"></div>&nbsp;&nbsp;
+      <input type="reset" class="btn btn-default btn-md" value=" 重 置 ">
+    </div>
+    <p></p>
+  </form>
+  </div>
+  <!-- main-right -->
+  <div class="col-sm-9 col-md-7">
+	  <table class="table table-bordered" id="resultDiv"></table>
+  </div>
+</div>
+
+<!-- footer -->
+<div class="row"></div>
+  </div>
+  <!-- frame-right -->
+  <div class="col-xs-1">&nbsp;</div>
+</div>
+</body>
+</html>
+

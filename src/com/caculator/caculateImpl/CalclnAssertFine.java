@@ -1,4 +1,4 @@
-package com.caculator;
+package com.caculator.caculateImpl;
 
 /**
  * 标满赋息
@@ -8,6 +8,9 @@ package com.caculator;
 
 import com.bean.CacularBean;
 import com.bean.ResultBean;
+import com.caculator.Caculate;
+import com.caculator.domain.Constant;
+import com.caculator.domain.DateValue;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -26,8 +29,8 @@ import java.util.Date;
  •	最后一个月本金全额退还：本金10000
 
  */
-public class CalclnAssertFine{
-    public static ArrayList<ResultBean> oparate(CacularBean cacularBean){
+public class CalclnAssertFine implements Caculate {
+    public ArrayList<ResultBean> oparate(CacularBean cacularBean){
         //获取利息
         double interest;
         //每期还款时间

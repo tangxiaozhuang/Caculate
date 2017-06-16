@@ -1,4 +1,4 @@
-package com.caculator;
+package com.caculator.domain;
 
 /**
  *  常量

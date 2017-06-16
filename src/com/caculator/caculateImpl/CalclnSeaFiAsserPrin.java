@@ -1,8 +1,10 @@
-package com.caculator;
+package com.caculator.caculateImpl;
 
 
 import com.bean.CacularBean;
 import com.bean.ResultBean;
+import com.caculator.Caculate;
+import com.caculator.domain.Constant;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -12,8 +14,8 @@ import java.util.Date;
 /**
  * Created by thz on 2017/5/18.
  */
-public class CalclnSeaFiAsserPrin {
-    public  static ArrayList<ResultBean> oparate(CacularBean cacularBean){
+public class CalclnSeaFiAsserPrin implements Caculate {
+    public ArrayList<ResultBean> oparate(CacularBean cacularBean){
         ArrayList<ResultBean> scheduleList = new ArrayList<ResultBean>();
         Date fromDate=CacularBean.getDateBg();
         Date nextTime;

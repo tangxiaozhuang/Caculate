@@ -1,7 +1,10 @@
-package com.caculator;
+package com.caculator.caculateImpl;
 
 import com.bean.CacularBean;
 import com.bean.ResultBean;
+import com.caculator.Caculate;
+import com.caculator.domain.Constant;
+import com.caculator.domain.DateValue;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -12,8 +15,8 @@ import java.util.Date;
 /**
  * Created by thz on 2017/5/18.
  */
-public class CalclnFine {
-    public  static ArrayList<ResultBean> oparate(CacularBean cacularBean){
+public class CalclnFine implements Caculate {
+    public ArrayList<ResultBean> oparate(CacularBean cacularBean){
         ArrayList<ResultBean> list=new ArrayList<ResultBean>();
         //每期还款时间
         Date fromDate=cacularBean.getDateBg();
@@ -32,7 +35,7 @@ public class CalclnFine {
 
 
 
-        if (cacularBean.getDateType()==Constant.MONTHLY&&cacularBean.getRateType() == Constant.ANNUALRATE) {
+        if (cacularBean.getDateType()== Constant.MONTHLY&&cacularBean.getRateType() == Constant.ANNUALRATE) {
             interest=cacularBean.getLMoney()*cacularBean.getLRate()/(100*12)*cacularBean.getLDate();
         }
 

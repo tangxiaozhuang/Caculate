@@ -3,6 +3,7 @@ package com.controller;
 import com.bean.CacularBean;
 import com.bean.ResultBean;
 import com.caculator.*;
+import com.caculator.caculateImpl.*;
 
 import java.util.List;
 
@@ -14,38 +15,45 @@ public class CaculatorCtr {
 
         int k=cacularBean.getRepayType();
         List<ResultBean> result=null;
+        Caculate caculate;
         switch (k){
             case 0:
-                result= CalclnMonthFine.oparate(cacularBean);
+                caculate= new CalclnMonthFine();
                 break;
             case 1:
-                result=CalclnFine.oparate(cacularBean);
+                caculate= new CalclnFine();
                 break;
             case 2:
-                result= CalclnDayFine.oparate(cacularBean);
+                caculate= new CalclnDayFine();
                 break;
             case 3:
-                result= CalclnEqualBlance.oparate(cacularBean);
+                caculate= new CalclnEqualBlance();
                 break;
             case 4:
-                result=CalclnMonFiSeaPrin.oparate(cacularBean);
+                caculate= new CalclnMonFiSeaPrin();
                 break;
             case 5:
-                result= CalclnAssertFine.oparate(cacularBean);
+                caculate= new CalclnAssertFine();
                 break;
             case 6:
-                result= CallnEqualFinePrincipal.oparate(cacularBean);
+                caculate= new CallnEqualFinePrincipal();
                 break;
             case 7:
-                result= CalclnEqualPrncipal.oparate(cacularBean);
+                caculate= new CalclnEqualPrncipal();
                 break;
             case 8:
-                result= CalclnSeaFiAsserPrin.oparate(cacularBean);
+                caculate= new CalclnSeaFiAsserPrin();
+                break;
+            default:
+                caculate=null;
                 break;
         }
 
+        return caculate.oparate(cacularBean);
+    }
 
-        return result;
+    public static void main(){
+
     }
 }
 

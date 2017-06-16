@@ -1,7 +1,10 @@
-package com.caculator;
+package com.caculator.caculateImpl;
 
 import com.bean.CacularBean;
 import com.bean.ResultBean;
+import com.caculator.Caculate;
+import com.caculator.domain.Constant;
+import com.caculator.domain.DateValue;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -18,8 +21,8 @@ import java.util.Date;
  每月还息计算：remainingBalance*m%/12 每三期待收款额为remainingBalance*m%/12+loanDate/((n+2)/3) 若为最后一期，收款额为remainingBalance*m%/12+loanDate/((n+2)/3)
 
  */
-public class CalclnMonFiSeaPrin {
-    public  static ArrayList<ResultBean> oparate(CacularBean cacularBean){
+public class CalclnMonFiSeaPrin implements Caculate {
+    public  ArrayList<ResultBean> oparate(CacularBean cacularBean){
         //获取利息
         double interest;
         //每期还款时间

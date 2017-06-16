@@ -1,7 +1,9 @@
-package com.caculator;
+package com.caculator.caculateImpl;
 
 import com.bean.CacularBean;
 import com.bean.ResultBean;
+import com.caculator.Caculate;
+import com.caculator.domain.Constant;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -17,9 +19,9 @@ import java.util.Date;
  * 每月应还利息=剩余资金*月利率
  * 每月还本金=月供额-应还利息
  */
-public class CalclnEqualBlance {
+public class CalclnEqualBlance implements Caculate {
 
-    public  static ArrayList<ResultBean> oparate(CacularBean cacularBean){
+    public ArrayList<ResultBean> oparate(CacularBean cacularBean){
         //获取利息
         double interest;
         //每期还款时间
@@ -32,7 +34,7 @@ public class CalclnEqualBlance {
 
         //计算月利率
         double MonthRate;
-        if(cacularBean.getRateType()==Constant.ANNUALRATE) {
+        if(cacularBean.getRateType()== Constant.ANNUALRATE) {
             MonthRate=cacularBean.getLRate()/(12*100);
         }
         else

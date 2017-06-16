@@ -1,8 +1,11 @@
-package com.caculator;
+package com.caculator.caculateImpl;
 
 
 import com.bean.CacularBean;
 import com.bean.ResultBean;
+import com.caculator.Caculate;
+import com.caculator.domain.Constant;
+import com.caculator.domain.DateValue;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -18,8 +21,8 @@ import java.util.Date;
  •	总利息为本金m%/12期数
 
  */
-public class CallnEqualFinePrincipal {
-    public  static ArrayList<ResultBean> oparate(CacularBean cacularBean){
+public class CallnEqualFinePrincipal implements Caculate {
+    public  ArrayList<ResultBean> oparate(CacularBean cacularBean){
         //获取利息
         double interest;
         //每期还款时间
@@ -38,7 +41,7 @@ public class CallnEqualFinePrincipal {
         double principal=cacularBean.getLMoney()/cacularBean.getLDate();
         principal= new BigDecimal(String.valueOf(principal)).setScale(2, BigDecimal.ROUND_HALF_UP).doubleValue();
 
-        if(cacularBean.getDateType()==Constant.MONTHLY) {
+        if(cacularBean.getDateType()== Constant.MONTHLY) {
             for (int i = 1; i <= cacularBean.getLDate(); i++) {
                 ResultBean resultBean = new ResultBean();
                 int issue=cacularBean.getDateType();

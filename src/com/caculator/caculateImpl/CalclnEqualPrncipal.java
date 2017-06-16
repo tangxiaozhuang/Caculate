@@ -1,7 +1,9 @@
-package com.caculator;
+package com.caculator.caculateImpl;
 
 import com.bean.CacularBean;
 import com.bean.ResultBean;
+import com.caculator.Caculate;
+import com.caculator.domain.Constant;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -16,9 +18,9 @@ import java.util.Date;
  *等额本金计算公式：每月还款金额 = （贷款本金 / 还款月数） + （本金 — 已归还本金累计额） × 每月利率
 
  */
-public class CalclnEqualPrncipal {
+public class CalclnEqualPrncipal implements Caculate {
 
-    public  static ArrayList<ResultBean> oparate(CacularBean cacularBean){
+    public  ArrayList<ResultBean> oparate(CacularBean cacularBean){
         //获取利息
         double interest;
         //每期还款时间
@@ -42,7 +44,7 @@ public class CalclnEqualPrncipal {
 
 
             //利率按年算。每月利息=本金*年利率/12
-            if(cacularBean.getRateType()==Constant.ANNUALRATE) {
+            if(cacularBean.getRateType()== Constant.ANNUALRATE) {
                 interest = cacularBean.getLMoney() * (cacularBean.getLRate()/100)/12;
             }
             //利率按天算，每月利息=本金*日利率*30

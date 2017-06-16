@@ -1,4 +1,4 @@
-package com.caculator;
+package com.caculator.domain;
 
 import java.util.Calendar;
 import java.util.Date;

@@ -1,7 +1,9 @@
-package com.caculator;
+package com.caculator.caculateImpl;
 
 import com.bean.CacularBean;
 import com.bean.ResultBean;
+import com.caculator.Caculate;
+import com.caculator.domain.Constant;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -17,8 +19,8 @@ import java.util.Date;
  此外，最后一个月还需支付本金，所以，最后一个月的还款计算方式为：还款利息10000(m%/12)+本金10000*
 
  */
-public class CalclnMonthFine {
-    public  static ArrayList<ResultBean> oparate(CacularBean cacularBean){
+public class CalclnMonthFine implements Caculate {
+    public  ArrayList<ResultBean> oparate(CacularBean cacularBean){
 
         ArrayList<ResultBean> list=new ArrayList<ResultBean>();
         Date fromDate= CacularBean.getDateBg();
